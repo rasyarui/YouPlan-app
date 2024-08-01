@@ -1,4 +1,4 @@
-<h1 align="center">Todo List & Note Application</h1>
+<h1 align="center">Plan Aplication</h1>
 
 ## Tech
 
