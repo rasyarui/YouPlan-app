@@ -1,4 +1,4 @@
-<h1 align="center">Plan Aplication</h1>
+<img width="1178" alt="Tangkapan Layar 2024-07-24 pukul 18 12 50" src="https://github.com/user-attachments/assets/152eae05-82b3-4a38-835a-903d6c58f49d"><h1 align="center">Plan Aplication</h1>
 
 ## Tech
 
@@ -67,7 +67,8 @@ php artisan serve
 
 ## Contoh Enkripsi
 
-<img src="https://ibb.co.com/2FWhp1C" alt="Contoh Enkripsi">
+
+<img src="![Uploading Tangkapan Layar 2024-07-24 pukul 18.12.50.png…]()" alt="Contoh Enkripsi">
 
 ## License
 
