@@ -1583,7 +1583,6 @@
     bottom: 0;
     left: 0;
     height: 3px;
-    border-radius: 10px;
     width: 100%;
     background-color: aliceblue;
 }
@@ -1598,6 +1597,7 @@
     background-color: rgb(111, 104, 251);
     animation: progress 4s linear forwards;
     animation-delay: 1s;
+    border-radius: 10px;
 }
 
 @keyframes notif {
