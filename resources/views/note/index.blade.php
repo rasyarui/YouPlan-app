@@ -6,26 +6,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="icon" type="image/png" href="/img/YouPlan.png" />
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+
+    <script src="https://cdn.ckeditor.com/ckeditor5/36.0.0/classic/ckeditor.js" data-navigate-once></script>
+
+
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.js"
+        integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+    </script>
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
     </style>
-
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
-        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-
     <link rel="stylesheet" href="/css/style.css">
-
-    <title>YouPlan</title>
-
+    <title>Note</title>
 </head>
 
 <body>
+    {{-- <script>
+        $(document).ready(function(){
+          $("#exampleModal2").on('hidden.bs.modal', function(){
+            livewire.emit('forcedCloseModal');
+          });
+        });
+        </script> --}}
+ 
 
+    <livewire:note.index />
+    
 
-    @livewire('employee')
 
     <div class="bottom-nav">
         <a href="/todo" class="{{ Request::is('todo*') ? 'active' : '' }}">
@@ -39,7 +54,7 @@
             </div>
         </a>
 
-        <a href="/note" class="{{ Request::is('note') ? 'active' : '' }}">
+        <a href="/note" class="{{ Request::is('note*') ? 'active' : '' }}">
             <div class="bottom-nav-list">
                 <svg xmlns="http://www.w3.org/2000/svg" width="23px" height="23px" viewBox="0 0 24 24">
                     <path fill="none" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -50,12 +65,7 @@
             </div>
         </a>
     </div>
-
-
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
-    </script>
+</body>
 
 
 

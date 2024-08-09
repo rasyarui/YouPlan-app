@@ -44,7 +44,7 @@
 
 
 
-            <a href="/history">
+            <a href="/todo/history">
                 <button class="history-list">
                     <svg style="margin-bottom: 2px" xmlns="http://www.w3.org/2000/svg" width="22px" height="22px"
                         viewBox="0 0 24 24">
@@ -106,7 +106,7 @@
             <div class="footer-content">
                 <div class="footer">
                     <p>
-                        © 2024 <span class="bold">You Plan</span> · Created with ❤️️ by <a
+                        © 2024 <span class="bold">You Plan</span> · Created with <span class="love">❤️️</span> by <a
                             href="https://rasya-design.vercel.app/" target="blank" class="bold">Rasya</a>
 
                     </p>

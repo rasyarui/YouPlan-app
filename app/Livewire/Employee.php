@@ -5,12 +5,14 @@ namespace App\Livewire;
 
 use Carbon\Carbon;
 
+use App\Models\Note;
 use App\Models\Todo;
 use App\Models\User;
 use Livewire\Component;
 use Illuminate\Http\Request;
 use Livewire\WithPagination;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
 
 
@@ -77,10 +79,8 @@ class Employee extends Component
         $todo->delete([
             'activity' => $this->activityedit,
         ]);
-    Session::flash('successD', 'Success deleted plan.');
-
-
-
+        Session::flash('successD', 'Todo Deleted Successfully         
+');
     }
 
 
@@ -92,23 +92,29 @@ class Employee extends Component
         $this->activity_id = '';
     }
 
+
+
     public function update()
     {
 
+
         $data = Todo::find($this->activity_id);
 
-        $data->update([
-            'activity' => $this->activityedit,
-            'status' => $this->defaultStatus
-        ]);
+        if ($data) {
+            $this->validate([
+                'activityedit' => 'required'
+            ]);
 
-
-    Session::flash('successD', 'Plan successfully updated.');
-
-
-
-
+            $data->update([
+                'activity' => $this->activityedit,
+                'status' => $this->defaultStatus
+            ]);
+            return redirect('/todo')->with('successD', 'Todo Updated Successfully.');
+        } else {
+            dd("gagal");
+        }
     }
+
 
 
     public function logout(Request $request)

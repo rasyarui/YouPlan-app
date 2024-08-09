@@ -33,7 +33,7 @@ class Login extends Component
             return null;
         } 
 
-        return redirect('/');
+        return redirect('/todo');
     }
 
 }

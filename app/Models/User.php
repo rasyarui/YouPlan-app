@@ -3,11 +3,12 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use App\Models\Note;
 use App\Models\Todo;
 use Carbon\Traits\Cast;
 use Illuminate\Auth\MustVerifyEmail;
-use Illuminate\Auth\Passwords\CanResetPassword;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Auth\Passwords\CanResetPassword;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
@@ -35,6 +36,9 @@ class User extends Authenticatable
 
     public function Todo(){
         return $this->hasMany(Todo::class);
+    }
+    public function Note(){
+        return $this->hasMany(Note::class);
     }
     /**
      * The attributes that should be hidden for serialization.

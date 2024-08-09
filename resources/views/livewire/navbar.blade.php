@@ -22,33 +22,38 @@
     </div>
 
     <div class="navbar">
-        <a href="/">
+        <a href="/todo">
             <div class="logo">
                 <img src="/img/Logo.png" alt="">
-                </div>
+            </div>
         </a>
-       
 
-        <a href="/" class="todo">
-            <p>Todo List</p>
-
-        </a>
+        <div class="list">
+            <a href="/todo" class="{{ Request::is('todo*') ? 'active' : '' }}">
+                Todo List
+            </a>
+            <a href="/note" class="{{ Request::is('note*') ? 'active' : '' }}">
+                Note
+            </a>
+        </div>
 
         @if (auth()->user()->avatar)
-        <button class="avatar" data-bs-toggle="dropdown" aria-expanded="false">
-        <img class="avatar-img" src="{{ auth()->user()->avatar }}?t={{ time() }}" alt="{{ auth()->user()->name }}" >
-        </button>
+            <button class="avatar" data-bs-toggle="dropdown" aria-expanded="false">
+                <img class="avatar-img" src="{{ auth()->user()->avatar }}?t={{ time() }}"
+                    alt="{{ auth()->user()->name }}">
+            </button>
         @else
-        <button class="btn-profile" data-bs-toggle="dropdown" aria-expanded="false">
-            <svg class="logo-prof" xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" viewBox="0 0 24 24">
-                <path fill="#7771FF" fill-rule="evenodd"
-                    d="M8 7a4 4 0 1 1 8 0a4 4 0 0 1-8 0m0 6a5 5 0 0 0-5 5a3 3 0 0 0 3 3h12a3 3 0 0 0 3-3a5 5 0 0 0-5-5z"
-                    clip-rule="evenodd" />
-            </svg>
-        </button>
+            <button class="btn-profile" data-bs-toggle="dropdown" aria-expanded="false">
+                <svg class="logo-prof" xmlns="http://www.w3.org/2000/svg" width="30px" height="30px"
+                    viewBox="0 0 24 24">
+                    <path fill="#7771FF" fill-rule="evenodd"
+                        d="M8 7a4 4 0 1 1 8 0a4 4 0 0 1-8 0m0 6a5 5 0 0 0-5 5a3 3 0 0 0 3 3h12a3 3 0 0 0 3-3a5 5 0 0 0-5-5z"
+                        clip-rule="evenodd" />
+                </svg>
+            </button>
         @endif
 
-     
+
 
 
         <div class="acah">

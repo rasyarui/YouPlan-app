@@ -1,10 +1,12 @@
 <div>
+
+
+
+    
     <div class="main-history">
         @if (session()->has('successD'))
             <livewire:notification />
         @endif
-
-
         <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -27,7 +29,7 @@
         <div class="jumbotrons">
             <h1>History Plan</h1>
             <div class="inputs">
-                <a href="/">
+                <a href="/todo">
                     <button class="history-list">
                         <svg style="margin-bottom: 4px" xmlns="http://www.w3.org/2000/svg" width="20px" height="20px"
                             viewBox="-0.5 -0.5 24 24">
@@ -162,4 +164,27 @@
 
 
 
+    <div class="bottom-nav">
+        <a href="/todo" class="{{ Request::is('todo*') ? 'active' : '' }}">
+            <div class="bottom-nav-list">
+                <svg xmlns="http://www.w3.org/2000/svg" width="23px" height="23px" viewBox="0 0 24 24">
+                    <path fill="none" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M11 6h10m-10 6h10m-10 6h10M3 7.393S4 8.045 4.5 9C4.5 9 6 5.25 8 4M3 18.393S4 19.045 4.5 20c0 0 1.5-3.75 3.5-5"
+                        color="white" />
+                </svg>
+                <p>Todo List</p>
+            </div>
+        </a>
+
+        <a href="/note" class="{{ Request::is('note') ? 'active' : '' }}">
+            <div class="bottom-nav-list">
+                <svg xmlns="http://www.w3.org/2000/svg" width="23px" height="23px" viewBox="0 0 24 24">
+                    <path fill="none" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M17 2v2m-5-2v2M7 2v2m-3.5 6c0-3.3 0-4.95 1.025-5.975S7.2 3 10.5 3h3c3.3 0 4.95 0 5.975 1.025S20.5 6.7 20.5 10v5c0 3.3 0 4.95-1.025 5.975S16.8 22 13.5 22h-3c-3.3 0-4.95 0-5.975-1.025S3.5 18.3 3.5 15zM8 15h4m-4-5h8"
+                        color="white" />
+                </svg>
+                <p>Note</p>
+            </div>
+        </a>
+    </div>
 </div>

@@ -1,8 +1,10 @@
 <?php
 
 use App\Models\User;
-use App\Livewire\Login;
+use App\Livewire\Add;
 
+use App\Livewire\Note;
+use App\Livewire\Login;
 use App\Livewire\History;
 use App\Livewire\Profile;
 use App\Livewire\Register;
@@ -10,19 +12,34 @@ use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\NoteController;
 use Illuminate\Support\Facades\Password;
 use Illuminate\Auth\Events\PasswordReset;
 use App\Http\Controllers\GithubController;
 use App\Http\Controllers\GoogleController;
 
 Route::middleware('auth')->group(function () {
-    Route::get('/', function () {
+    Route::get('/todo', function () {
         return view('home');
     });
 
     Route::get('/profile', Profile::class)->name('profile');
+    Route::get('/todo/history', History::class);
 
-    Route::get('/history', History::class);
+    Route::prefix('note')->controller(NoteController::class)->name('note.')->group(function () {
+        Route::get('/', 'index')->name('index');
+        Route::get('add', 'create')->name('create');
+        Route::post('/', 'store')->name('store');
+        Route::get('{note}/edit', 'edit')->name('edit');
+        Route::patch('{note}', 'update')->name('update');
+
+    });
+
+    // Route::get('/note', NoteController::class)->name('index');
+    // Route::get('/add', NoteController::class)->name('create');
+
+
+
 });
 
 Route::get('/forgot-password', function () {

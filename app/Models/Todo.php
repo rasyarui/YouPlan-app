@@ -17,7 +17,9 @@ class Todo extends Model
         'user_id',
     ];
 
+
     protected $encrypt = ['activity'];
+
     public function setAttribute($key, $value){
         if(in_array($key, $this->encrypt)){
             $this->attributes[$key]=encrypt($value);

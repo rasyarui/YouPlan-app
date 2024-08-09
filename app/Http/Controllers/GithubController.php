@@ -27,7 +27,7 @@ class GithubController extends Controller
                 $findUser->save();
                 Auth::login($findUser);
 
-                return redirect()->intended('/');
+                return redirect()->intended('/todo');
             }else{
                 $newUserGithub = User::updateOrCreate(['email' => $user->email],
                 [
@@ -40,7 +40,7 @@ class GithubController extends Controller
                 ]);
                 Auth::login($newUserGithub);
 
-                return redirect()->intended('/');
+                return redirect()->intended('/todo');
 
             }
         }catch(Exception $e){

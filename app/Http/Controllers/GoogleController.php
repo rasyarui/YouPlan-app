@@ -30,7 +30,7 @@ class GoogleController extends Controller
                 $findUser->save();
                 Auth::login($findUser);
 
-                return redirect('/');
+                return redirect('/todo');
             }else{
                 $newUser = User::updateOrCreate(['email' => $user->email],
                 [
@@ -43,7 +43,7 @@ class GoogleController extends Controller
                 ]);
                 Auth::login($newUser);
 
-                return redirect('/');
+                return redirect('/todo');
 
 
             }
