@@ -70,7 +70,9 @@ php artisan serve
 ## Contoh Enkripsi
 
 
-<img width="1178" alt="contoh enkripsi" src="https://github.com/user-attachments/assets/2e41aa98-1ce8-4b53-862e-8ce56f9c72e2">
+<img width="1437" alt="Tangkapan Layar 2024-08-10 pukul 03 39 39" src="https://github.com/user-attachments/assets/88cb2cfe-0b66-4f63-8536-0617e4a51715">
+
+
 
 ## License
 
