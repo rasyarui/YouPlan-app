@@ -1,4 +1,4 @@
-<h1 align="center">Plan Aplication</h1>
+<h1 align="center">You-Plan Aplication</h1>
 
 ## Tech
 
@@ -13,7 +13,9 @@
 
 -   Login & Register
 -   Login with GitHub / Google
+-   Reset Password (dikirim ke email)
 -   Todo List
+-   Note (bisa dikunci)
 -   Enkripsi Laravel menggunakan OpenSSL untuk menyediakan enkripsi AES-256 dan AES-128
 
 ## Cara Penggunaan
