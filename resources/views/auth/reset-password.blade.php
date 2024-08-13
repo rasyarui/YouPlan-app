@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,33 +18,42 @@
     <link rel="stylesheet" href="/css/style.css">
     <title>Reset-Password</title>
 </head>
+
 <body>
-    
 
-
-    <div class="register-main">
-        <div class="register">
+    <div class="reset-password">
+        <div class="login">
             <div class="content-login needs-validation">
-                <h1>You <span class="logo">Plan</span></h1>
+                <div class="logo">
+                    <img src="/img/YouPlan2.png" alt="">
+                </div>
+                @if (session()->has('errorStatus'))
+                <span class="status ">
+                    We can't find a user with that email address.
+                </span>
+            @endif
+            @if (session()->has('status'))
+                <span class="status success">We have emailed your password reset link.</span>
+            @endif
                 <form action="{{ route('password.update') }}" method="POST">
                     @csrf
                     <input type="hidden" name="token" value="{{ request()->token }}">
                     <input type="hidden" name="email" value="{{ request()->email }}">
 
                     <div class="password">
-                        <label for="password">Password</label>
-                        <input type="password" value="" class="@error('password') invalid @enderror" name="password"
-                            id="password" placeholder="Password" required>
+                        <label for="password">New Password</label>
+                        <input type="password" value="" class="@error('password') invalid @enderror"
+                            name="password" id="password" placeholder="Password" required>
                         @error('password')
                             <span class="error">{{ $message }}</span>
                         @enderror
 
                     </div>
                     <div class="password">
-                        <label for="password_confirmation">Confirmation Password</label>
+                        <label for="password_confirmation">Confirmation New Password</label>
                         <input type="password" class="@error('password_confirmation') invalid @enderror"
-                            name="password_confirmation"
-                            id="password_confirmation" placeholder="Password Confirmation" required>
+                            name="password_confirmation" id="password_confirmation" placeholder="Password Confirmation"
+                            required>
                         @error('password_confirmation')
                             <span class="error">{{ $message }}</span>
                         @enderror
@@ -51,15 +61,12 @@
                     </div>
                     <br>
                     <button class="regis">
-                        <svg style="margin-bottom: 5px;" xmlns="http://www.w3.org/2000/svg" width="22px" height="22px" viewBox="0 0 24 24">
-                            <g fill="none" stroke="white">
-                                <path stroke-linejoin="round"
-                                    d="M4 18a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z" />
-                                <circle cx="12" cy="7" r="3" />
-                            </g>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 24 24">
+                            <path fill="white"
+                                d="M22 12c0 5.523-4.477 10-10 10S2 17.523 2 12S6.477 2 12 2v2a8 8 0 1 0 5.135 1.865L15 8V2h6l-2.447 2.447A9.98 9.98 0 0 1 22 12" />
                         </svg>
                         Update Password</button>
-                        @if (session()->has('success'))
+                    @if (session()->has('success'))
                         <span class="success">{{ session('success') }}.</span>
                     @endif
                 </form>
@@ -69,4 +76,5 @@
 
 
 </body>
+
 </html>

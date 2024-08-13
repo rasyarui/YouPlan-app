@@ -6,6 +6,11 @@
             <div class="logo">
                 <img src="/img/YouPlan2.png" alt="">
                 </div>
+                @if (session()->has('status'))
+                <span class="status success">Your password has been reset.
+                </span>
+            @endif
+
             <form wire:submit.prevent="loginUser()">
 
                 <div class="username">

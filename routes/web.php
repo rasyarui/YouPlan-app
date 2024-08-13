@@ -17,6 +17,8 @@ use Illuminate\Support\Facades\Password;
 use Illuminate\Auth\Events\PasswordReset;
 use App\Http\Controllers\GithubController;
 use App\Http\Controllers\GoogleController;
+use Illuminate\Validation\Rules;
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/todo', function () {
@@ -46,16 +48,6 @@ Route::get('/forgot-password', function () {
     return view('auth.forgot-password');
 })->middleware('guest')->name('password.request');
 
-Route::post('/forgot-password', function (Request $request) {
-    $request->validate(['email' => 'required|email']);
-    $status = Password::sendResetLink(
-        $request->only('email')
-    );
-
-    return $status === Password::RESET_LINK_SENT
-        ? back()->with(['status' => __($status)])
-        : back()->withErrors(['email' => __($status)]);
-})->middleware('guest')->name('password.email');
 
 Route::get('/reset-password/{token}', function ($token) {
     return view('auth.reset-password', ['token' => $token]);
@@ -65,7 +57,8 @@ Route::post('/reset-password', function (Request $request) {
     $request->validate([
         'token' => 'required',
         'email' => 'required|email',
-        'password' => 'required|min:8|confirmed'
+        'password' => ['required', 'confirmed', Rules\Password::defaults()],
+
     ]);
 
     $status = Password::reset(
@@ -83,7 +76,7 @@ Route::post('/reset-password', function (Request $request) {
 
     return $status === Password::PASSWORD_RESET
         ? redirect()->route('login')->with('status', __($status))
-        : back()->withErrors(['email' => [__($status)]]);
+        : back()->with(['statusError' => [__($status)]]);
 })->middleware('guest')->name('password.update');
 
 // Route::get('/forgot-password', [ForgotPasswordController::class, 'forgot_password'])->name('forgot-password');

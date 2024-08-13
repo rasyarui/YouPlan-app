@@ -2,6 +2,10 @@
     scroll-behavior: smooth;
 }
 
+button:active{
+    scale: 0.9;
+}
+
 .modal {
     width: 100vw;
     background-color: rgba(119, 113, 255, 20%);
@@ -452,6 +456,10 @@ input.is-invalid {
     mix-blend-mode: screen;
     height: 60px;
 }
+
+
+
+
 
 .content-login .logo img {
     /* width: 100%; */
@@ -1089,6 +1097,21 @@ input.is-invalid {
     background-color: #e4eafb;
 }
 
+.login .content-login span.status{
+    color: #16a34a
+    ;
+    margin: auto;
+    font-weight: 400;
+    padding: 10px 30px;
+    width: 81%;
+    display: block;
+    margin-bottom: 15px;
+    font-size: 14px;
+    border-radius: 8px;
+    background-color: #dcfce7    ;
+
+}
+
 .login .content-login .or p {
     width: fit-content;
     padding: 0 15px;
@@ -1120,6 +1143,10 @@ input.is-invalid {
     padding-top: 180px;
     width: 100vw;
     height: 100vh;
+}
+
+.register-main .register label{
+    font-weight: 450;
 }
 
 .content-login .username input[type="text"].invalid,
@@ -1175,7 +1202,7 @@ input.is-invalid {
     color: #2a303c;
     opacity: 95%;
     font-size: 13px;
-    font-weight: 300;
+    font-weight: 450;
 }
 
 .content-login .username {
@@ -1255,24 +1282,30 @@ input.is-invalid {
     justify-content: space-between;
     width: 80%;
 }
-.content-login .lp a {
-    font-size: 14px;
-    color: #5a5bd1;
+.content-login .lp a:hover {
+    color: #7771ff;
 }
 
 .content-login .lp a {
+    font-weight: 450;
     font-size: 14px;
-    color: #5a5bd1;
+    color: #5f60c3;
 }
 
 .content-login .already p {
     color: #2a303c;
     font-size: 15px;
+    font-weight: 450;
 }
 
+.content-login .already a:hover {
+    color: #7771ff;
+    
+}
 .content-login .already a {
     font-size: 15px;
     color: #5a5bd1;
+    font-weight: 450;
 }
 
 .masuk:hover {
@@ -1286,18 +1319,18 @@ input.is-invalid {
     color: white;
     right: 30px;
     padding: 0 20px;
-    width: 80%;
+    width: 81%;
     cursor: pointer;
     border-radius: 8px;
     border: none;
     top: 1px;
     height: 48px;
     margin-bottom: 10px;
-    font-weight: 300;
+    font-weight: 450;
 }
 
 .masuk2:hover {
-    background-color: rgb(51, 65, 85, 90%);
+    background-color: rgb(51, 65, 85, 87%);
 }
 
 .masuk2 {
@@ -1306,14 +1339,14 @@ input.is-invalid {
     font-size: 14px;
     color: white;
     padding: 0 20px;
-    width: 80%;
+    width: 81%;
     cursor: pointer;
     border-radius: 8px;
     border: none;
     top: 1px;
     height: 48px;
     margin-bottom: 15px;
-    font-weight: 300;
+    font-weight:450;
 }
 
 .masuk2 svg {
@@ -1321,25 +1354,32 @@ input.is-invalid {
     margin-right: 4px;
 }
 
+.masuk3:hover {
+    background-color: #dc2626;
+}
 .masuk3 {
     transition: ease-in-out 0.1s;
     background-color: #b91c1c;
     font-size: 14px;
     color: white;
     padding: 0 20px;
-    width: 80%;
+    width: 81%;
     cursor: pointer;
     border-radius: 8px;
     border: none;
     top: 1px;
     height: 48px;
     margin-bottom: 10px;
-    font-weight: 300;
+    font-weight: 450;
 }
 
 .masuk3 svg {
     margin-bottom: 3px;
     margin-right: 4px;
+}
+
+.regis svg{
+    margin-bottom: 2px;
 }
 
 .regis {
@@ -1355,7 +1395,7 @@ input.is-invalid {
     margin-top: -20px;
     margin-bottom: 15px;
     height: 48px;
-    font-weight: 300;
+    font-weight: 450;
 }
 
 .main-profile {
