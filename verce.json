@@ -11,7 +11,7 @@
             "dest": "/public/img/"
         },
         {
-            "src": "/(.*)",
+            "src": "/todo(.*)",
             "dest": "/api/index.php"
         }
     ],
