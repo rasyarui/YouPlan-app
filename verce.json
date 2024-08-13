@@ -6,19 +6,15 @@
         }
     },
     "routes": [
-        {
-            "src": "/img/(.*)",
-            "dest": "/public/img/"
-        },
-        {
-            "src": "/(.*)",
-            "dest": "/api/api/index.php"
-        }
+        { "src": "/build/(.*)", "dest": "/public/build/" },
+        { "src": "/resources/(.*)", "dest": "/public/resources/" },
+        { "src": "/favicon/(.*)", "dest": "/public/favicon/" },
+        { "src": "/(.*)", "dest": "/api/index.php" }
     ],
     "env": {
         "APP_ENV": "production",
         "APP_DEBUG": "true",
-        "APP_URL": "https://YouPlan.vercel.app/login",
+        "APP_URL": "https://YouPlan.vercel.app/",
         "APP_CONFIG_CACHE": "/tmp/config.php",
         "APP_EVENTS_CACHE": "/tmp/events.php",
         "APP_PACKAGES_CACHE": "/tmp/packages.php",
