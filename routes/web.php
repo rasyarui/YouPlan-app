@@ -20,10 +20,18 @@ use App\Http\Controllers\GoogleController;
 use Illuminate\Validation\Rules;
 
 
+
 Route::middleware('auth')->group(function () {
     Route::get('/todo', function () {
         return view('home');
+        
     });
+
+    Route::get('/', function () {
+        return view('home');
+        
+    });
+
 
     Route::get('/profile', Profile::class)->name('profile');
     Route::get('/todo/history', History::class);
